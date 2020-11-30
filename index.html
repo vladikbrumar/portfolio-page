@@ -33,7 +33,7 @@
                 <a class="nav__link" href="#">about me</a>
                 <a class="nav__link" href="#">blog</a>
                 <a class="nav__link" href="#">contact</a>
-                <a class="nav__link  nav__link--btn" href="#">hire me</a>
+                <a class="nav__link  nav__link--btn" href="#" data-modal="#modal_hire_me">hire me</a>
             </nav>
         </div>
     </div>
@@ -72,8 +72,8 @@
                     </a>
                 </div>
 
-                <a class="btn" href="#">HIRE ME</a>
-                <button class="btn" type="button">SEE MY RESUME</button>
+                <a class="btn" href="#" data-modal="#modal_hire_me">HIRE ME</a>
+                <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
             </div>
 
             <img class="intro__photo" src="images/photo.png" alt="">
@@ -98,7 +98,7 @@
 
         <div class="portfolio">
             <div class="portfolio__col" data-cat="app">
-                <div class="work">
+                <div class="work" data-modal="#modal_project">
                     <img class="work__image" src="https://placehold.it/370x300" alt="">
                     <div class="work__content">
                         <div class="work__cat">category: app</div>
@@ -196,8 +196,14 @@
                 <h2 class="about__bigtitle">WHO AM I</h2>
                 <div class="about__text">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus leo. Praesent dui sapien, bibendum quis tempus dictum, auctor ac dui.
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at mauris porta, ullamcorper sem quis, lobortis sem. Donec sit amet aliquet dui, at varius est. Phasellus porttitor finibus neque vel vehicula. Duis in nulla egestas, dignissim elit at, imperdiet eros.</p> <p>Integer tristique posuere purus. Suspendisse placerat, quam vitae ullamcorper sollicitudin, dui ligula molestie massa, sit amet laoreet nibh ex vitae dui. Aenean laoreet pellentesque lacus, eget varius massa mattis quis. Nunc ultrices urna eu nunc lobortis pulvinar. Duis viverra, quam non imperdiet scelerisque, urna nunc consequat velit, in mollis erat nibh in libero.</p>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at mauris porta, ullamcorper sem quis, lobortis sem. Donec sit amet aliquet dui, at varius est. Phasellus porttitor finibus neque vel vehicula. Duis in nulla egestas, dignissim elit at, imperdiet eros.</p>
                 </div>
+
+                <div class="mt-3">
+                    <a class="btn" href="#" data-modal="#modal_hire_me">HIRE ME</a>
+                    <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -361,7 +367,7 @@
                 <a href="" class="footer__nav-link">About me</a>
                 <a href="" class="footer__nav-link">Blog</a>
                 <a href="" class="footer__nav-link">Contact</a>
-                <a href="" class="footer__nav-link footer__nav-link--btn">Hire me</a>
+                <a href="" class="footer__nav-link footer__nav-link--btn"  data-modal="#modal_hire_me">Hire me</a>
             </nav>
         </div>
     </div>
@@ -370,10 +376,10 @@
 
 <!-- Modals -->
 
-<div class="modal"  style="display: none;">
+<div class="modal" id="modal_project">
     <div class="modal__dialog">
 
-        <button class="modal__close" type="button">
+        <button class="modal__close" type="button" data-close="">
             <img src="images/modal-close.svg" alt="">
         </button>
 
@@ -414,13 +420,13 @@
         </div>
 
     </div>
-</div>
+</div> <!-- /.modal -->
 
 
-<div class="modal" style="display: none;">
+<div class="modal" id="modal_resume">
     <div class="modal__dialog">
 
-        <button class="modal__close" type="button">
+        <button class="modal__close" type="button" data-close="">
             <img src="images/modal-close.svg" alt="">
         </button>
 
@@ -573,10 +579,10 @@
 </div> <!-- /.modal -->
 
 
-<div class="modal" style="display: none;">
+<div class="modal" id="modal_hire_me">
     <div class="modal__dialog modal__dialog--sm">
 
-        <button class="modal__close" type="button">
+        <button class="modal__close" type="button" data-close="">
             <img src="images/modal-close.svg" alt="">
         </button>
 

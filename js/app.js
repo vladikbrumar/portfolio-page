@@ -1,9 +1,10 @@
 $(function() {
 
+    /* filter */
     let filter = $("[data-filter]"); // get element with filter
 
     filter.on("click", function(event) {
-        event.preventDefault(); //cancel link option
+        event.preventDefault(); //cancel default link behavior
 
         let cat = $(this).data('filter'); // get value of filter
 
@@ -28,4 +29,40 @@ $(function() {
 
     });
 
+
+    /* Modal */
+
+    const modalCall = $("[data-modal]");
+    const modalClose = $("[data-close]");
+
+    modalCall.on("click", function(event) {
+        event.preventDefault(); //cancel default link behavior
+
+        let $this = $(this);
+        let modalId = $this.data('modal');  // onClick save modal id
+
+        $(modalId).addClass('show');
+        $("body").addClass("no-scroll");
+    });
+
+
+    modalClose.on("click", function(event) {
+        event.preventDefault();
+
+        let $this = $(this);
+        let modalParent = $this.parents('.modal');
+
+        modalParent.removeClass('show');
+        $("body").removeClass("no-scroll");
+
+    });
+
+    $(".modal").on("click", function(event) {
+        $(this).removeClass('show');
+        $("body").removeClass("no-scroll");
+    });
+
+    $(".modal__dialog").on("click", function(event) {
+        event.stopPropagation(); //cancel click on parent
+    });
 });
